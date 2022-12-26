@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button, Menu} from 'antd';
+import {Menu} from "antd";
 import {Link} from "umi";
 import FloatButtom from "./FloatButtom";
 
-function Home() {
+function NUC_INFO() {
   return (
     <div>
       <Menu mode="horizontal" theme={"dark"}>
@@ -20,11 +20,10 @@ function Home() {
           <Link to="/home">home</Link>
         </Menu.Item>
       </Menu>
-      <h1>Home</h1>
-      <Button type="primary">Click me!</Button>
+      <div>NUC_INFO</div>
       <FloatButtom/>
     </div>
   );
 }
 
-export default Home;
+export default NUC_INFO;

@@ -13,5 +13,5 @@ wss.on('connection', function connection(ws) {
       altitude: Math.random() * 100
     };
     ws.send(JSON.stringify(data));
-  }, 100);
+  }, 300);
 });

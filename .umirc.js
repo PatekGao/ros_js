@@ -10,8 +10,8 @@ export default defineConfig({
       component: '@/pages/index',
     },
     {
-      path: '/about',
-      component: '@/pages/about',
+      path: '/NUC_INFO',
+      component: '@/pages/NUC_INFO',
     },
     {
       path: '/contact',

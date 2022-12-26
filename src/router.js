@@ -1,13 +1,8 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Home from './pages/home';
-import About from './pages/about';
+import NUC_INFO from './pages/NUC_INFO';
 import Contact from './pages/contact';
 import NotFound from './pages/notfound';
 
@@ -16,16 +11,16 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home/>
         </Route>
-        <Route path="/about">
-          <About />
+        <Route path="/NUC_INFO">
+          <NUC_INFO/>
         </Route>
         <Route path="/contact">
-          <Contact />
+          <Contact/>
         </Route>
         <Route path="*">
-          <NotFound />
+          <NotFound/>
         </Route>
       </Switch>
     </Router>
