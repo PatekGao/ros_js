@@ -110,23 +110,23 @@ function DynamicTable() {
 
   return (
     <Card>
-      <Table dataSource={data} bordered>
-        <Table.Column title="Speed" dataIndex="speed" key="speed" width={100} ellipsis/>
+      <Table dataSource={data} pagination={false} bordered>
+        <Table.Column title="Speed" dataIndex="speed" key="speed" ellipsis/>
       </Table>
       <Progress percent={speed} status="active" strokeColor={{'0%': '#f56a6a', '100%': '#5fb3b3'}}
                 format={percent => `${percent.toFixed(1)}%`}/>
-      <Table dataSource={data} bordered>
-        <Table.Column title="Distance" dataIndex="distance" key="distance" width={100} ellipsis/>
+      <Table dataSource={data} pagination={false} bordered>
+        <Table.Column title="Distance" dataIndex="distance" key="distance" ellipsis/>
       </Table>
       <Progress percent={distance / 10} status="active" strokeColor={{'0%': '#5fb3b3', '100%': '#e9c46a'}}
                 format={percent => `${percent.toFixed(1)}%`}/>
-      <Table dataSource={data} bordered>
-        <Table.Column title="Temperature" dataIndex="temperature" key="temperature" width={100} ellipsis/>
+      <Table dataSource={data} pagination={false} bordered>
+        <Table.Column title="Temperature" dataIndex="temperature" key="temperature" ellipsis/>
       </Table>
       <Progress percent={temperature * 2} status="active" strokeColor={{'0%': '#e9c46a', '100%': '#663399'}}
                 format={percent => `${percent.toFixed(1)}%`}/>
-      <Table dataSource={data} bordered>
-        <Table.Column title="Altitude" dataIndex="altitude" key="altitude" width={100} ellipsis/>
+      <Table dataSource={data} pagination={false} bordered>
+        <Table.Column title="Altitude" dataIndex="altitude" key="altitude" ellipsis/>
       </Table>
       <Progress percent={altitude} status="active" strokeColor={{'0%': '#663399', '100%': '#f56a6a'}}
                 format={percent => `${percent.toFixed(1)}%`}/>
