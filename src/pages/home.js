@@ -6,59 +6,59 @@ import './styles.css';
 const { Search } = Input;
 
 const itemsFromBackend1 = [
-  { id: '1', content: 'pth' },
-  { id: '2', content: 'wxy' },
-  { id: '3', content: 'lb' },
-  { id: '4', content: 'rzx' },
-  { id: '5', content: 'jy' },
-  { id: '6', content: 'zj' },
-  { id: '7', content: 'lq' },
-  { id: '8', content: 'yj' },
+  { id: 'aa', content: 'pth' },
+  { id: 'ab', content: 'wxy' },
+  { id: 'ac', content: 'lb' },
+  { id: 'ad', content: 'rzx' },
+  { id: 'ae', content: 'jy' },
+  { id: 'af', content: 'zj' },
+  { id: 'ag', content: 'lq' },
+  { id: 'ah', content: 'yj' },
 ];
 const itemsFromBackend2 = [
-  { id: '9', content: 'zq' },
-  { id: '10', content: 'zjy' },
-  { id: '11', content: 'lqy' },
-  { id: '12', content: 'zxy' },
-  { id: '13', content: 'zzy' },
-  { id: '14', content: 'lby' },
-  { id: '15', content: 'jyy' },
-  { id: '16', content: 'zy' },
+  { id: 'ba', content: 'zq' },
+  { id: 'bb', content: 'zjy' },
+  { id: 'bc', content: 'lqy' },
+  { id: 'bd', content: 'zxy' },
+  { id: 'be', content: 'zzy' },
+  { id: 'bf', content: 'lby' },
+  { id: 'bg', content: 'jyy' },
+  { id: 'bh', content: 'zy' },
 ];
 const itemsFromBackend3 = [
-  { id: '17', content: 'zyy' },
-  { id: '18', content: 'lyy' },
-  { id: '19', content: 'zyx' },
-  { id: '20', content: 'zqy' },
-  { id: '21', content: 'zyj' },
-  { id: '22', content: 'lqz' },
-  { id: '23', content: 'zyq' },
-  { id: '24', content: 'zjyy' },
+  { id: 'ca', content: 'zyy' },
+  { id: 'cb', content: 'lyy' },
+  { id: 'cc', content: 'zyx' },
+  { id: 'cd', content: 'zqy' },
+  { id: 'ce', content: 'zyj' },
+  { id: 'cf', content: 'lqz' },
+  { id: 'cg', content: 'zyq' },
+  { id: 'ch', content: 'zjyy' },
 ];
 const itemsFromBackend4 = [
-  { id: '25', content: 'lbyy' },
-  { id: '26', content: 'jyyy' },
-  { id: '27', content: 'zyyy' },
-  { id: '28', content: 'zyxy' },
-  { id: '29', content: 'zyz' },
-  { id: '30', content: 'zyyx' },
-  { id: '31', content: 'lyyy' },
-  { id: '32', content: 'zyjy' },
+  { id: 'da', content: 'lbyy' },
+  { id: 'db', content: 'jyyy' },
+  { id: 'dc', content: 'zyyy' },
+  { id: 'dd', content: 'zyxy' },
+  { id: 'de', content: 'zyz' },
+  { id: 'df', content: 'zyyx' },
+  { id: 'dg', content: 'lyyy' },
+  { id: 'dh', content: 'zyjy' },
 ];
 const itemsFromBackend5 = [
-  { id: '33', content: 'lqyy' },
-  { id: '34', content: 'zqyy' },
-  { id: '35', content: 'zjyyy' },
-  { id: '36', content: 'lbxy' },
-  { id: '37', content: 'lbz' },
-  { id: '38', content: 'lbj' },
-  { id: '39', content: 'lbq' },
-  { id: '40', content: 'lbjy' },
+  { id: 'ea', content: 'lqyy' },
+  { id: 'eb', content: 'zqyy' },
+  { id: 'ec', content: 'zjyyy' },
+  { id: 'ed', content: 'lbxy' },
+  { id: 'ee', content: 'lbz' },
+  { id: 'ef', content: 'lbj' },
+  { id: 'eg', content: 'lbq' },
+  { id: 'eh', content: 'lbjy' },
 ];
-const answer1 = ['pth'];
-const answer2 = ['wxy'];
-const answer3 = ['lb'];
-const answer4 = ['rzx'];
+const answer1 = ['eh', 'ca', 'ec', 'ed', 'ad', 'ac', 'ag', 'ef', 'da', 'db'];
+const answer2 = ['bh', 'dd', 'ab', 'df', 'ah', 'eg', 'bg', 'ea', 'eb', 'aa'];
+const answer3 = ['cf', 'ch', 'dg', 'ee', 'bb', 'bc', 'bf', 'cc', 'ce', 'de'];
+const answer4 = ['af', 'cd', 'be', 'dc', 'cg', 'cb', 'ba', 'dh', 'ae', 'bd'];
 
 const columnsFromBackend = {
   ['TODO1']: {
@@ -146,9 +146,12 @@ const Home = () => {
   };
   const handleButtonClick = () => {
     let result = {};
+    let resultId = {};
     Object.entries(columns).forEach(([, column]) => {
       result[column.name] = column.items.map((item) => item.content);
+      resultId[column.name] = column.items.map((itemId) => itemId.id);
     });
+    console.log(resultId);
     let code = '{';
     // Format the result object
     let formattedResult = '';
