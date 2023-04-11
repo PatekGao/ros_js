@@ -171,29 +171,42 @@ const Home = () => {
         // newResult["class"].items.push(2);
       }
       code += name + '/';
+      Object.entries(resultId).forEach(([key, value]) => {
+        value.forEach((item) => {
+          if (key === 'Unit 1') {
+            code += '1' + item;
+            flag = answer1.includes(item);
+          } else if (key === 'Unit 2') {
+            code += '2' + item;
+            flag = answer2.includes(item);
+          } else if (key === 'Unit 3') {
+            code += '3' + item;
+            flag = answer3.includes(item);
+          } else if (key === 'Unit 4') {
+            code += '4' + item;
+            flag = answer4.includes(item);
+          }
+        });
+      });
       Object.entries(result).forEach(([key, value]) => {
         if (key !== '') {
           formattedResult += `${key}:\n`;
           value.forEach((item) => {
-            if (key === 'Unit 1') {
-              code += '1' + item;
-              flag = answer1.includes(item);
-            } else if (key === 'Unit 2') {
-              code += '2' + item;
-              flag = answer2.includes(item);
-            } else if (key === 'Unit 3') {
-              code += '3' + item;
-              flag = answer3.includes(item);
-            } else if (key === 'Unit 4') {
-              code += '4' + item;
-              flag = answer4.includes(item);
-            }
-            formattedResult += `  - ${item}`;
-            if (flag === true) {
-              formattedResult += `  √\n`;
-            } else if (flag === false) {
-              formattedResult += `  ×\n`;
-            }
+            // if (key === 'Unit 1') {
+            //   flag = answer1.includes(item);
+            // } else if (key === 'Unit 2') {
+            //   flag = answer2.includes(item);
+            // } else if (key === 'Unit 3') {
+            //   flag = answer3.includes(item);
+            // } else if (key === 'Unit 4') {
+            //   flag = answer4.includes(item);
+            // }
+            formattedResult += `  - ${item}\n`;
+            // if (flag === true) {
+            //   formattedResult += `  √\n`;
+            // } else if (flag === false) {
+            //   formattedResult += `  ×\n`;
+            // }
           });
         }
       });
