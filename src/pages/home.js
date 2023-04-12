@@ -2,63 +2,19 @@ import React, { useState } from 'react';
 import { Button, Card, Input } from 'antd';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './styles.css';
+import {
+  itemsFromBackend4,
+  itemsFromBackend2,
+  itemsFromBackend1,
+  itemsFromBackend3,
+  itemsFromBackend5,
+  answer1,
+  answer2,
+  answer3,
+  answer4,
+} from '../itemsTotal';
 
 const { Search } = Input;
-
-const itemsFromBackend1 = [
-  { id: 'aa', content: 'pth' },
-  { id: 'ab', content: 'wxy' },
-  { id: 'ac', content: 'lb' },
-  { id: 'ad', content: 'rzx' },
-  { id: 'ae', content: 'jy' },
-  { id: 'af', content: 'zj' },
-  { id: 'ag', content: 'lq' },
-  { id: 'ah', content: 'yj' },
-];
-const itemsFromBackend2 = [
-  { id: 'ba', content: 'zq' },
-  { id: 'bb', content: 'zjy' },
-  { id: 'bc', content: 'lqy' },
-  { id: 'bd', content: 'zxy' },
-  { id: 'be', content: 'zzy' },
-  { id: 'bf', content: 'lby' },
-  { id: 'bg', content: 'jyy' },
-  { id: 'bh', content: 'zy' },
-];
-const itemsFromBackend3 = [
-  { id: 'ca', content: 'zyy' },
-  { id: 'cb', content: 'lyy' },
-  { id: 'cc', content: 'zyx' },
-  { id: 'cd', content: 'zqy' },
-  { id: 'ce', content: 'zyj' },
-  { id: 'cf', content: 'lqz' },
-  { id: 'cg', content: 'zyq' },
-  { id: 'ch', content: 'zjyy' },
-];
-const itemsFromBackend4 = [
-  { id: 'da', content: 'lbyy' },
-  { id: 'db', content: 'jyyy' },
-  { id: 'dc', content: 'zyyy' },
-  { id: 'dd', content: 'zyxy' },
-  { id: 'de', content: 'zyz' },
-  { id: 'df', content: 'zyyx' },
-  { id: 'dg', content: 'lyyy' },
-  { id: 'dh', content: 'zyjy' },
-];
-const itemsFromBackend5 = [
-  { id: 'ea', content: 'lqyy' },
-  { id: 'eb', content: 'zqyy' },
-  { id: 'ec', content: 'zjyyy' },
-  { id: 'ed', content: 'lbxy' },
-  { id: 'ee', content: 'lbz' },
-  { id: 'ef', content: 'lbj' },
-  { id: 'eg', content: 'lbq' },
-  { id: 'eh', content: 'lbjy' },
-];
-const answer1 = ['eh', 'ca', 'ec', 'ed', 'ad', 'ac', 'ag', 'ef', 'da', 'db'];
-const answer2 = ['bh', 'dd', 'ab', 'df', 'ah', 'eg', 'bg', 'ea', 'eb', 'aa'];
-const answer3 = ['cf', 'ch', 'dg', 'ee', 'bb', 'bc', 'bf', 'cc', 'ce', 'de'];
-const answer4 = ['af', 'cd', 'be', 'dc', 'cg', 'cb', 'ba', 'dh', 'ae', 'bd'];
 
 const columnsFromBackend = {
   ['TODO1']: {
