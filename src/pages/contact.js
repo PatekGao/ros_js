@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import FloatButtom from './FloatButtom';
+import FloatButtom from './components/FloatButtom';
 import { Button, Input, Tag } from 'antd';
 import { TweenOneGroup } from 'rc-tween-one';
 import { processCode } from '../processCode';
